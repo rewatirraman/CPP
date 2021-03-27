@@ -1,4 +1,3 @@
----------
 Tokenizer    std::strtok
 ---------
     - It's the cheapest standard provided tokenization method.
@@ -142,3 +141,4 @@ conversion to integers / floating points.
         
         - syntax: 
             int stoi (const string&  str, size_t* idx = 0, int base = 10);
+----------
