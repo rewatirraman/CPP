@@ -1,4 +1,4 @@
-Tokenizer    std::strtok
+Tokenizer    `std::strtok`
 ---------
     - It's the cheapest standard provided tokenization method.
     - Cannot be used on multiple string at the same time, hence can not be used on multiple thread simultaneously.
@@ -42,7 +42,7 @@ Lexicographical comparision
 
 
 ------------------
-String replacement
+String replacement  `.replace()`
 ------------------
     - To replace a portion of a string we can use `replace` method from std::string.
 
@@ -66,7 +66,7 @@ Converting to std::string
         std::string str = ss.str();
 
 -----------------------------
-Generate substring   `substr`
+Generate substring   `substr()`
 -----------------------------
     - syntax:
         string substr (size_t pos = 0, size_t len = npos) const;
@@ -84,7 +84,7 @@ Accessing a character
 
 
 --------------------------
-find content in the string      `find`
+find content in the string      `find()`
 --------------------------
     - It returns the position of the first character of the first match,
         if no match found it will return `std::string::npos`
