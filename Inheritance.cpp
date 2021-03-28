@@ -5,10 +5,9 @@ typedef long long ll;
 // Base class.
 class Employee
 {
-    int eid;
-    float salary;
-
     public:
+        int eid;
+        float salary;
         Employee(){}
         Employee(int id, int sal) {
             eid = id;
@@ -34,17 +33,58 @@ class {{derived-class-name}} : {{visibility-mode}} {{base-name}}
 */
 
 // Creating a programmer class derived from Employee class.
-class Programmer : Employee
+class Programmer : public Employee
 {
+    string skill;
+    public:
+        Programmer() {}
+        Programmer(int i, int s) {
+            eid = i;
+            salary = s;
+        }
+        void setSkill(string skl) {
+            skill = skl;
+        }
 
-}
+        void display() {
+            getData();
+            cout << "Skill is " << skill << endl;
+        }
+};
 
-
+// Multilevel inheritance 
+// Base class of Manager if Programmer and Base class of Programmer is Employee.
+// Inheritance path is : Employee --> Programmer --> Manager.
+class Manager : public Programmer
+{
+    int mngrId;
+    public:
+        Manager() {}
+        Manager(int id, int sal) {
+            eid = id;
+            salary = sal;
+        }
+        void setMngrId(int mid) {mngrId = mid;}
+        void displayManagerId(){
+            cout << mngrId << endl;
+        }
+};
 
 int main()
 {
-    Employee rewati(1, 100), raman(2, 540);
+    Employee rewati(1, 100);
     rewati.getData();
-    raman.getData();
+
+    Programmer rrr(9,111);
+    rrr.setSkill("C++");
+    rrr.display();
+
+    Manager rraman(9, 912);
+    rraman.setSkill("Python");
+    rraman.setMngrId(101);
+    rraman.display();
+    cout << "Manager Id is ";
+    rraman.displayManagerId();
+    cout << endl;
     return 0;
 }
