@@ -102,6 +102,44 @@
                     else       --> Compiler try to promote the data type.
                     
                     If this also fails then compiler will throw error.
+    
+    --------------------------
+    `new` & `delete` Operators
+    --------------------------
+        - Dynamically allocated memory is allocated in Heap, whereas non-static & local variables get memory allocated on stack.
+        - For normal variables like `int a`, `int arr[10]` ... memory is automatically allocated & deallocated.
+        - For dynamically allocated memory it's programmer's responsibility to deallocate the memory if no longer needed.
+            If programmer doesn't deallocate the memory then it causes `memory leak` (memory is not deallocated until the program terminates.)
+        - `C` uses `malloc` & `calloc` functions to allocate the memory dynamically and `free` to deallocate the same.
+        - `C++` supports these functions also has two more operator `new` & `delete` that perform the same task in a better and easier way.
+
+        - Syntax :
+            pointer-variable = new data-type
+
+                int *p=NULL; p=new int;
+                (or)
+                int *p = new int;
+
+            // We can also initialize the memory using new operator.
+                int *p = new int(4);
+                float *pf = new float(4.2);
+
+                int *p = new int[10]    // Array
+
+        - What is enough memory is not available in the Heap.
+            It will throw an exception `std::bad_alloc` unless `nothrow` is used with new operator (in this case it will return NULL).
+            Eg. int *p = new(nothrow) int;
+
+            - It's a good practice to always check for the pointer variable after using new operator.
+        
+        * `delete` operator. *
+            - Used to release the memory pointed by pointer variable.
+            - Syntax : 
+                        delete pointer-variable;
+                        deleted[] pointer-variable; // for release block of memory (array).
+
+                
+
 */
 
 #include <bits/stdc++.h>

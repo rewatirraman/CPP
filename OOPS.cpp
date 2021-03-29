@@ -239,15 +239,92 @@ Inheritance
             Not the one in the Base class.
 
     **Virtual base class**
+        - In the below example there are 4 classes, let's say `class A` have a variable called `a`,
+            since `class B` & `class C` is inherited from `class A` hence, they both variable `a` is accessible from both easily.
+            not `class D` is created inheriting from both the classes `class B` & `class C`,
+            this varibale `a` will be inherited twice in the `class D`,
+            so, to avoid this kind of ambiguity and duplication we use virtual base class.
         
 
+                      |-> class B ->|
+            class A ->|             |-> class D
+                      |-> class C ->|
         
+        - To avoid this ambiguity we use `virtual` keyword while inheriting `class A` in `class B` & `class C`.
+            class B : virtual public A {...}
+            class C : virtual public A {...}
+
+        - We need virtual keyword in both the classes `class B` & `class C` otherwise it will throw `ambiguous symbol` error.
+        - Eg. VirtualBaseClass.cpp
+
+    **Constructors in Derived classes.**
+        Eg. ConstructorsInDerivedClass.cpp
+        - We can use constructors in derived classes.
+        - If base class constructor does not have any argument, there is no need of any constructor in derived class.
+        - If there are one or more arguments in the nase class constructor, derived class need to pass argument to the base class constructor.
+        - If both base and derived classes have constructors, base class constructor is executed first.
+        - In multiple inheritance, base classes are constructed in the order in which they appear in the class declaration.
+        - In multilevel inheritance, the constructors are executed in the order of inheritance.
+
+        *Special syntax*
+            - C++ supports an special syntax for passing arguments to multiple base classes.
+            - The constructor of derived class recieves all the arguments at once and then will pass the calls to the respective base classes.
+            - The body is called after all the constructors are finished executing.
+            - Eg.
+                Derived_constructor (arg1, arg2, arg3,....) : Base1_constructor(arg1, arg2), Base2_constructor(arg3)
+                {
+                    // Derived constructor functionality.
+                }
+
+        *Special case of virtual base class*
+            - The constructors for virtual classes are invoked before any non-virtual class.
+            - If there are multiple virtual classes, they are invoked in the order declared.
+            - Any non-virtual class are then constructed before the derived class constructor is executed. 
+
+    **Initialization list in Constructor.**
+        - Syntax :
+            constructor (argument-list) : initialization-section
+            {
+                assignment + other code.
+            }
+        - Eg. https://www.geeksforgeeks.org/when-do-we-use-initializer-list-in-c/
 
 
 
+------------
+Polymorphism
+------------
+    1. Compile time
+        1.1. function overloading   
+        1.2. operator overloading   --> OperatorOverload.cpp
+    2. Run time
+        2.1. virtual fucntions  --> This is used to override the default bheaviour in case of base pointer pointing to derived class.
+
+    - Base class pointer can point to derived class object it is valid in C++.
+        but if we call any method using that base class pointer it will call it from base class not from the derived class,
+        this is called late binding.
+
+    - Eg.
+        Polymorphism.cpp
+
+    - A pointer is of base class and pointing to derived class object so, it will bind to the base class members,
+        but if we want it to bind to the derived class as this is pointing to the derived class object.
+        then we need to use virtual function.
+
+        Eg. virtual void display()
+
+    ** Abstract base class **
+        - Class which consist of atleast one pure virtual function.
+        - We can create pointer of the abstract base class, but we can't create an object of abstract basse class.
+        - This is basically created for the design purpose.
 
 
-
+    ** Pure Virtual fucntion **
+        - In the base class there is a function created to do nothign, it is just meant to overwrite this funciton by the derived class forcefully.
+            Otherwise it will throw an error.
+        - It is used to create abstract base class.
+        Eg. 
+            virtual void display()=0;
 
 
 

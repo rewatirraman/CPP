@@ -2,3 +2,23 @@ assert
 trim_start
 trim_end
 trim_copy
+
+
+Name mangling:
+
+    - C++ achieve function overloading with the help of name mangling.
+    - C++ compliler changes the name of the functions when it generate the object code... it chnages the name by adding some info about the argumnets.
+        This technique of adding additional info to the function name is called Name mangling.
+
+        C++ does not specify any specific method to do so... hence different compiler used different techniques to achieve the same.
+        
+        https://www.geeksforgeeks.org/extern-c-in-c/
+        
+        when some code is put inside `extern “C”` the C++ compiler ensures that the functions name are unmangled.
+        
+        during compilation and the same updated name is stored in the symbol table which is used for the fcuntion calls etc..
+        eg. name of the fucntion is fun() .. but in the symbol table it is stored like _Zfunc ......
+    
+
+Run time polymorphism
+    
