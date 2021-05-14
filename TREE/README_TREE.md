@@ -23,6 +23,35 @@
 * **Height of a Node :** It is the number of edges on the longest path between that node & a leaf.
 * **Height of the Tree :** Its the height of root node of that tree.
 
+## Different types of tree.
+
+* General Tree
+* Binary Tree
+* Binary Search Tree
+* AVL Tree
+* Spanning Tree
+* B Tree
+* B+ Tree
+* HEAP
+
+## Applications of Tree data structures.
+
+* Used in storing hierarchical data, like organization structure, folder structure, etc..
+* Used in storing router-tables in routers.
+* Used by Compilers to build Syntax trees.
+* Used to implement expression parsers.
+* BST is a tree helps in faster search, insert, delete on a sorted data.
+* HEAP is a tree implemented using arrays & used to implement priority queues.
+* B Tree & B+ Trees are used to implement indexing in databases.
+
+------------------------------------------------------------------------------------------------------
+
+# Binary Tree.
+
+
+
+
+
 
 
 
