@@ -1,4 +1,4 @@
-#TREE
+# TREE
 -----
 
 * Non linear data structure, b/c it does not store the data in sequential manner.
@@ -10,7 +10,7 @@
 ![](images/01.png)
 
 
-##Important terms related to Tree.
+## Important terms related to Tree.
 ----------------------------------
 
 * **Root Node :** Complete tree is referenced using this node & it does not have any parent.
