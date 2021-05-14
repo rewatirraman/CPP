@@ -46,9 +46,25 @@
 
 ------------------------------------------------------------------------------------------------------
 
-# Binary Tree.
+# Binary Tree
 
+* It is a tree data structure in which each nodes can have maximum of 2 children nodes, referenced as left child & right child.
 
+* **Strict / Proper Binary Tree :** Each node have either 0 or 2 child.
+* **Complere Binary Tree :**        All levels except last level are completly filled and in the last level all the nodes are filled in left to right fashion.
+* **Perfect Binary Tree :**         All the levels of the Tree are completetly filled with 2 children of each nodes.
+
+## Implementation
+
+![](images/02.jpeg)
+
+------------------------------------------------------------------------------------------------------
+
+# Binary Search Tree
+
+* It is a type of a binary tree, in which the values in the left subtrees of every node are smaller & the values in the right subtrees of every node are larger.
+
+![](images/03.png)
 
 
 
