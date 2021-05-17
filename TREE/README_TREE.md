@@ -66,9 +66,115 @@
 
 ![](images/03.png)
 
+## Different Operations on BST.
+
+* Insertion Operation
+* Traversal Techniques
+    * DFS -> PreOrder, InOrder, PostOrder
+    * BFS -> Level Order
+* Search Operation
+* Deletion Operation
+
+### Insertion Operation
+
+* Pseudo code
+```
+    TreeNode *newNode = new TreeNode(val)  // Creating a new node in the heap.
+    if rootNode is NULL
+        Make newNode as rootNode and return.
+    else {
+        while (rootNode != NULL) {
+            if (newNode->value == rootNode->value) {
+                Print Duplicate nodes are not allowed and return.
+            } else if (newNode->value < rootNode->value) {
+                if (rootNode->left)
+                    then rootNode = rootNode->left
+                else    
+                    rootNode->left = newNode
+            } else if (newNode->value > rootNode->value) {
+                if (rootNode->right)
+                    then rootNode = rootNode->right
+                else
+                    rootNode->right = newNode
+            }
+        }
+    }
+```
 
 
+### Traversal Techniques
 
+* There are two types of traversal
+    1. **DFS (Depth first search)** :-> PreOrder, InOrder, PostOrder
+    2. **BFS (Breadth first search)** :-> Level order traversal
+
+* PreOrder Traversal Pseudo Code
+```
+    PreOrderTraversal(rootNode) {
+        Print(rootNode->value)
+        PreOrderTraversal(rootNode->left)
+        PreOrderTraversal(rootNode->right)
+    }
+```
+
+* InOrder Traversal Pseudo Code
+```
+    InOrderTraversal(rootNode) {
+        InOrderTraversal(rootNode->left)
+        Print(rootNode->value)
+        InOrderTraversal(rootNode->right)
+    }
+```
+
+* PostOrder Traversal Pseudo Code
+```
+    PostOrderTraversal(rootNode) {
+        PostOrderTraversal(rootNode->left)
+        PostOrderTraversal(rootNode->right)
+        Print(rootNode->value)
+    }
+```
+
+* LevelOrder Traversal Pseudo Code ( Method 1. Using function to print the current level )
+
+```
+    LevelOrderTraversal(rootNode) {
+        for i=1 to heightOfTheTree {
+            PrintCurrentLevel(rootNode, i)
+        }
+    }
+
+    PrintCurrentLevel(rootNode, level) {
+        if rootNode is NULL then return
+        
+        if (level == 1) {
+            Print(rootNode->value)
+            return
+        }
+
+        PrintCurrentLevel(rootNode->left, level-1);
+        PrintCurrentLevel(rootNode->right, level-1);
+    }
+```
+
+* LevelOrder Traversal Pseudo Code ( Method 1. Using Queue data structure )
+```
+    LevelOrderTraversal(rootNode) {
+        Create an empty queue Q
+        Q.insert(rootNode)
+        while (Q is not empty) {
+            temp = Q.front()
+            print(temp->value)
+            if rootNode->left then Q.push(rootNode->left)
+            if rootNode->right then Q.push(rootNode->right)
+        }
+    }
+```
+
+### Search Operation
+
+
+### Deletion Operation
 
 
 
