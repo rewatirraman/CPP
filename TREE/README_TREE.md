@@ -72,6 +72,7 @@
 * Traversal Techniques
     * DFS -> PreOrder, InOrder, PostOrder
     * BFS -> Level Order
+* Height of the Tree
 * Search Operation
 * Deletion Operation
 
@@ -157,7 +158,7 @@
     }
 ```
 
-* LevelOrder Traversal Pseudo Code ( Method 1. Using Queue data structure )
+* LevelOrder Traversal Pseudo Code ( Method 2. Using Queue data structure )
 ```
     LevelOrderTraversal(rootNode) {
         Create an empty queue Q
@@ -171,8 +172,44 @@
     }
 ```
 
-### Search Operation
+* Reverse LevelOrder Traveral ( Method 1. Using function to print the current level )
+    
+```
+    ReverseLevelOrderTraversal(rootNode) {
+        for i=heightOfTheTree down to 1 {
+            PrintCurrentLevel(rootNode, i)
+        }
+    } 
+```
 
+* Reverse LevelOrder Traveral ( Method 2. Using Queue & Stack structure )
+
+```
+    ReverseLevelOrderTraversal(rootNode) {
+        Create an empty queue Q & empty stack S.
+        Q.push(rootNode)
+        while ( Q is not empty ) {
+            temp = Q.front()
+            Q.pop()
+            
+            S.push(temp)
+            
+            if (temp->right) Q.push(temp->right)
+            if (temp->left) Q.push(temp->left)            
+        }
+
+        while (S is not empty) {
+            temp = S.top()
+            S.pop()
+            Print(temp->data)
+        }
+    }
+```
+
+### Height of the Tree
+
+
+### Search Operation
 
 ### Deletion Operation
 
